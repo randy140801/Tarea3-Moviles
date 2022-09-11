@@ -1,0 +1,58 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-list-header>App Multiuso</ion-list-header>
+          <ion-note>Randy Frias</ion-note>
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content">
+      <ion-header [translucent]="true">
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <ion-title>Inicio</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <ion-img src="assets/avatar.jpg"></ion-img>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              <ion-label >Randy Frias</ion-label>
+          </ion-col>
+         
+        </ion-row>
+      
+        <ion-row>
+          <ion-col>
+            <ion-label>2019-8464</ion-label>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row>
+          <ion-col>
+            <ion-label>randy140801@gmail.com</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

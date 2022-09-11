@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Tabla de multiplicar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Numero</ion-label>
+          <ion-input type="number" [(ngModel)]="n"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="secondary" (click)="tabla()">
+          Ver tabla
+        </ion-button>
+    </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+          <ion-list *ngFor="let tb of ntabla">
+            <ion-item>{{tb}}</ion-item>
+          </ion-list>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
